@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LTX Retake Presentation</title>
+
+  <style>
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      background: #f5f5f3;
+      color: #111;
+      font-family: Inter, Arial, sans-serif;
+    }
+
+    .page {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 90px 40px;
+    }
+
+    .eyebrow {
+      font-size: 13px;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: #999;
+      font-weight: 700;
+      margin-bottom: 24px;
+    }
+
+    h1 {
+      max-width: 820px;
+      font-size: clamp(48px, 7vw, 86px);
+      line-height: 0.95;
+      letter-spacing: -0.05em;
+      margin: 0;
+    }
+
+    .intro {
+      max-width: 700px;
+      font-size: 20px;
+      line-height: 1.6;
+      color: #666;
+      margin-top: 32px;
+    }
+
+    .section {
+      margin-top: 140px;
+    }
+
+    .section h2 {
+      font-size: clamp(34px, 4vw, 52px);
+      letter-spacing: -0.04em;
+      margin: 0;
+    }
+
+    .section-description {
+      max-width: 760px;
+      font-size: 19px;
+      line-height: 1.6;
+      color: #666;
+      margin: 18px 0 44px;
+    }
+
+    .caption {
+      min-height: 50px;
+      max-width: 760px;
+      font-size: 17px;
+      line-height: 1.55;
+      color: #666;
+      margin-bottom: 18px;
+    }
+
+    .carousel {
+      position: relative;
+      aspect-ratio: 16 / 9;
+      background: #050505;
+      border-radius: 32px;
+      overflow: hidden;
+      box-shadow: 0 30px 80px rgba(0,0,0,0.18);
+      border: 1px solid #ddd;
+    }
+
+    .carousel img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      display: block;
+      background: #050505;
+    }
+
+    .counter {
+      position: absolute;
+      top: 22px;
+      left: 22px;
+      background: rgba(0,0,0,0.65);
+      color: white;
+      font-size: 13px;
+      padding: 8px 14px;
+      border-radius: 999px;
+      backdrop-filter: blur(8px);
+    }
+
+    .arrow {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 54px;
+      height: 54px;
+      border-radius: 50%;
+      border: 1px solid #ddd;
+      background: rgba(255,255,255,0.92);
+      color: #333;
+      font-size: 24px;
+      cursor: pointer;
+      box-shadow: 0 8px 30px rgba(0,0,0,0.18);
+    }
+
+    .arrow:hover { background: white; }
+    .prev { left: 22px; }
+    .next { right: 22px; }
+
+    .dots {
+      display: flex;
+      gap: 9px;
+      justify-content: center;
+      margin-top: 22px;
+      flex-wrap: wrap;
+    }
+
+    .dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 999px;
+      border: none;
+      background: #ccc;
+      cursor: pointer;
+      transition: 0.25s;
+    }
+
+    .dot.active {
+      width: 42px;
+      background: #111;
+    }
+
+    .video {
+      margin-top: 40px;
+      aspect-ratio: 16 / 9;
+      border-radius: 30px;
+      background:
+        radial-gradient(circle at 20% 20%, rgba(70,80,255,0.45), transparent 32%),
+        radial-gradient(circle at 80% 70%, rgba(255,255,255,0.14), transparent 34%),
+        #050505;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      box-shadow: 0 30px 80px rgba(0,0,0,0.24);
+    }
+
+    .play {
+      width: 82px;
+      height: 82px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.12);
+      border: 1px solid rgba(255,255,255,0.22);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 34px;
+      margin: 0 auto 18px;
+    }
+
+    .summary {
+      margin-top: 150px;
+      border-radius: 36px;
+      background: #090909;
+      color: white;
+      padding: 70px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .summary h2 {
+      max-width: 850px;
+      font-size: clamp(42px, 6vw, 76px);
+      line-height: 0.95;
+      letter-spacing: -0.05em;
+      margin: 0;
+    }
+
+    .summary p {
+      max-width: 760px;
+      font-size: 20px;
+      line-height: 1.65;
+      color: rgba(255,255,255,0.7);
+      margin-top: 30px;
+    }
+
+    @media (max-width: 700px) {
+      .page { padding: 60px 20px; }
+      .section { margin-top: 100px; }
+      .arrow {
+        width: 44px;
+        height: 44px;
+        font-size: 20px;
+      }
+      .summary { padding: 40px 28px; }
+    }
+  </style>
+</head>
+
+<body>
+  <main class="page">
+    <p class="eyebrow">Product Motion Assignment</p>
+
+    <h1>Introducing Retake through motion.</h1>
+
+    <p class="intro">
+      Three storyboard directions exploring how to educate users about a new feature that lets them change only one part of a generated video, without regenerating the entire result.
+    </p>
+
+    <section class="section">
+      <h2>Option 01 — Guided Walkthrough</h2>
+      <p class="section-description">
+        A step-by-step educational flow that introduces Retake through a focused modal walkthrough. This approach is more explanatory and works well for first-time discovery.
+      </p>
+      <div id="carouselA"></div>
+
+      <div class="video">
+        <div>
+          <div class="play">▶</div>
+          <h3>Final Motion Prototype</h3>
+          <p>Video placeholder</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Option 02 — Contextual Tooltip Flow</h2>
+      <p class="section-description">
+        A lighter contextual onboarding experience that teaches Retake inside the workspace with minimal interruption to the creative flow.
+      </p>
+      <div id="carouselB"></div>
+    </section>
+
+    <section class="section">
+      <h2>Option 03 — Visual Demo Flow</h2>
+      <p class="section-description">
+        A polished product demo approach that shows the feature through an example video, then demonstrates the precise retake workflow and final outcome.
+      </p>
+      <div id="carouselC"></div>
+    </section>
+
+    <section class="summary">
+      <p class="eyebrow">Final Thoughts</p>
+      <h2>The motion should make the value instantly clear.</h2>
+      <p>
+        Across all three directions, the main idea is the same: Retake gives users precision and control. Instead of starting over, they can isolate a moment, describe the change, and keep the rest of the video intact.
+      </p>
+    </section>
+  </main>
+
+  <script>
+    const data = {
+      carouselA: {
+        images: ["A1.png","A2.png","A3.png","A4.png","A5.png","A6.png","A7.png","A8.png","A9.png"],
+        captions: [
+          "The user is inside the video generation workspace.",
+          "A contextual education card appears, introducing the idea of changing only one part of the video.",
+          "The user is shown how to select a specific section in the video timeline.",
+          "The selected section is highlighted, making the scope of the change clear.",
+          "The Retake result appears after replacing only the selected driver element.",
+          "The walkthrough guides the user to find Retake inside the Tools menu.",
+          "The Tools menu opens directly on the video card.",
+          "Retake is highlighted as the relevant action.",
+          "The user is reassured that only the selected part changes, not the full video."
+        ]
+      },
+      carouselB: {
+        images: ["B1.png","B2.png","B3.png","B4.png","B5.png","B6.png","B7.png","B8.png","B9.png","B10.png"],
+        captions: [
+          "A clear modal introduces the core value: change just one element without regenerating everything.",
+          "The user sees an example video where only a specific scene needs adjustment.",
+          "Retake is introduced as an action within the Tools menu.",
+          "The user selects Retake from the contextual menu.",
+          "The video timeline appears, letting the user isolate the exact section to edit.",
+          "The selected segment becomes the focus of the retake action.",
+          "The user enters a focused prompt for the desired change.",
+          "A generation state shows the selected region being updated.",
+          "The result appears in the same selected section only.",
+          "The final message reinforces the value: refine the exact moment without starting over."
+        ]
+      },
+      carouselC: {
+        images: ["C1.png","C2.png","C3.png","C4.png","C5.png","C6.png","C7.png","C8.png"],
+        captions: [
+          "The modal introduces the feature with a direct benefit-driven message.",
+          "The user is shown a video example inside the modal environment.",
+          "The Tools menu opens on the video preview and Retake is selected.",
+          "The user sees a timeline-style selection interface for choosing the exact moment.",
+          "A close-up frame makes the selected moment feel precise and intentional.",
+          "The user writes a prompt to change the woman’s action in the selected section.",
+          "The selected section enters a generation state while the rest of the video remains untouched.",
+          "The result lands with a clear message: only the selected section was changed."
+        ]
+      }
+    };
+
+    function createCarousel(id, item) {
+      let active = 0;
+      const root = document.getElementById(id);
+
+      function render() {
+        root.innerHTML = `
+          <p class="caption">${item.captions[active]}</p>
+
+          <div class="carousel">
+            <img src="public/images/${item.images[active]}" alt="Storyboard frame ${active + 1}">
+            <div class="counter">${String(active + 1).padStart(2, "0")} / ${String(item.images.length).padStart(2, "0")}</div>
+            <button class="arrow prev">←</button>
+            <button class="arrow next">→</button>
+          </div>
+
+          <div class="dots">
+            ${item.images.map((_, i) => `<button class="dot ${i === active ? "active" : ""}" data-index="${i}"></button>`).join("")}
+          </div>
+        `;
+
+        root.querySelector(".prev").onclick = () => {
+          active = (active - 1 + item.images.length) % item.images.length;
+          render();
+        };
+
+        root.querySelector(".next").onclick = () => {
+          active = (active + 1) % item.images.length;
+          render();
+        };
+
+        root.querySelectorAll(".dot").forEach(dot => {
+          dot.onclick = () => {
+            active = Number(dot.dataset.index);
+            render();
+          };
+        });
+      }
+
+      render();
+    }
+
+    createCarousel("carouselA", data.carouselA);
+    createCarousel("carouselB", data.carouselB);
+    createCarousel("carouselC", data.carouselC);
+  </script>
+</body>
+</html>
