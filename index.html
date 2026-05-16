@@ -151,40 +151,38 @@
     }
 
     .video-section {
-  width: calc(100vw - 120px);
-  max-width: 1400px;
-  margin: 48px 0 0;
-  margin-left: 50%;
-  transform: translateX(-50%);
-}
+      width: calc(100vw - 120px);
+      max-width: 1400px;
+      margin: 48px 0 0;
+      margin-left: 50%;
+      transform: translateX(-50%);
+      background: transparent;
+      box-shadow: none;
+      border: none;
+      border-radius: 0;
+      padding: 0;
+    }
 
-.video-title {
-  width: 100%;
-  font-size: 17px;
-  line-height: 1.55;
-  color: #666;
-  margin: 0 0 14px;
-  padding-left: 5px;
-  text-align: left;
-}
+    .video-title {
+      width: 100%;
+      font-size: 17px;
+      line-height: 1.55;
+      color: #666;
+      margin: 0 0 14px;
+      padding-left: 5px;
+      text-align: left;
+    }
 
-.video-wrapper {
-  position: relative;
-  width: 100%;
-  aspect-ratio: 16 / 9;
-  overflow: hidden;
-  border-radius: 16px;
-  background: #000;
-  border: 1px solid #ddd;
-  box-shadow: 0 30px 80px rgba(0,0,0,0.18);
-}
-
-.video-wrapper iframe {
-  width: 100%;
-  height: 100%;
-  border: 0;
-  display: block;
-}
+    .video-wrapper {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      overflow: hidden;
+      border-radius: 16px;
+      background: #000;
+      border: 1px solid #ddd;
+      box-shadow: 0 30px 80px rgba(0,0,0,0.18);
+    }
 
     .video-wrapper iframe {
       width: 100%;
@@ -230,6 +228,10 @@
 
       .carousel {
         height: 360px;
+      }
+
+      .video-section {
+        width: calc(100vw - 40px);
       }
 
       .arrow {
@@ -308,60 +310,85 @@
   <script>
     const data = {
       carouselA: {
-        images: ["First.png","A1.png","A2.png","A3.png","A4.png","A5.png","A6.png","A7.png","A8.png","A9.png"],
+        images: [
+          "First.png",
+          "A1.png",
+          "A2.png",
+          "A3.png",
+          "A4.png",
+          "A5.png",
+          "A6.png",
+          "A7.png",
+          "A8.png",
+          "A9.png"
+        ],
         captions: [
-  "Before animation starts"
-  "Presenting value on 1st frame",
-  "Scrubbing through defining start and end of section",
-  "Prompt being written",
-  "Cursor presses text and the AI ‘Magic’ happens",
-  "Driver changed and new video played",
-  "Orientation",
-  "Orientation",
-  "Orientation",
-  "Reinforce the message of value of feature"
-]
+          "Initial state before animation starts",
+          "Presenting value on 1st frame",
+          "Scrubbing through defining start and end of section",
+          "Prompt being written",
+          "Cursor presses text and the AI ‘Magic’ happens",
+          "Driver changed and new video played",
+          "Orientation",
+          "Orientation",
+          "Orientation",
+          "Reinforce the message of value of feature"
+        ]
       },
-      carouselB: {
-        images: ["First.png","B1.png","B2.png","B3.png","B4.png","B5.png","B6.png","B7.png","B8.png","B9.png","B10.png"],
-        captions: [
-  "Before animation starts"
-  "Big announcement of the feature",
-  "Cursor and menu are in animation (Not the user’s)",
-  "Cursor and menu are in animation (Not the user’s)",
-  "Value of feature reinforced visually",
-  "Adjust video section",
-  "AI ‘magic’ window spinning",
-  "Grey text, as in guiding user what’s suppose to input there",
-  "Text written like a prompt",
-  "Showing the change reuslt",
-  "Reinforce the message of value of feature"
-]
-      },
-      carouselC: {
-  images: [
-    "First.png",
-    "C1.png",
-    "C2.png",
-    "C3.png",
-    "C4.png",
-    "C5.png",
-    "C6.png",
-    "C7.png",
-    "C8.png"
-  ],
 
-  captions: [
-    "Small announcement of the feature",
-    "Big overtaking window",
-    "Orientation",
-    "Showing timeline to select the specific part",
-    "Scrubbing through to adjust selection",
-    "Entering prompt to change a specific element",
-    "AI ‘magic’ window spinning",
-    "The result: a change just for one element and a text to reinforce the value of feature"
-  ]
-},
+      carouselB: {
+        images: [
+          "First.png",
+          "B1.png",
+          "B2.png",
+          "B3.png",
+          "B4.png",
+          "B5.png",
+          "B6.png",
+          "B7.png",
+          "B8.png",
+          "B9.png",
+          "B10.png"
+        ],
+        captions: [
+          "Initial state before animation starts",
+          "Big announcement of the feature",
+          "Cursor and menu are in animation (Not the user’s)",
+          "Cursor and menu are in animation (Not the user’s)",
+          "Value of feature reinforced visually",
+          "Adjust video section",
+          "AI ‘magic’ window spinning",
+          "Grey text, as in guiding user what’s suppose to input there",
+          "Text written like a prompt",
+          "Showing the change result",
+          "Reinforce the message of value of feature"
+        ]
+      },
+
+      carouselC: {
+        images: [
+          "First.png",
+          "C1.png",
+          "C2.png",
+          "C3.png",
+          "C4.png",
+          "C5.png",
+          "C6.png",
+          "C7.png",
+          "C8.png"
+        ],
+        captions: [
+          "Initial state before animation starts",
+          "Small announcement of the feature",
+          "Big overtaking window",
+          "Orientation",
+          "Showing timeline to select the specific part",
+          "Scrubbing through to adjust selection",
+          "Entering prompt to change a specific element",
+          "AI ‘magic’ window spinning",
+          "The result: a change just for one element and a text to reinforce the value of feature"
+        ]
+      }
     };
 
     function createCarousel(id, item) {
