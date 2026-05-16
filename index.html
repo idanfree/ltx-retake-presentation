@@ -57,9 +57,9 @@
     }
 
     .section-description {
-      max-width: 760px;
+      max-width: 920px;
       font-size: 19px;
-      line-height: 1.6;
+      line-height: 1.7;
       color: #666;
       margin: 18px 0 44px;
     }
@@ -153,24 +153,19 @@
     .video-section {
       width: calc(100vw - 120px);
       max-width: 1400px;
-      margin: 48px 0 0;
+      margin: 120px 0 0;
       margin-left: 50%;
       transform: translateX(-50%);
       background: transparent;
-      box-shadow: none;
-      border: none;
-      border-radius: 0;
-      padding: 0;
     }
 
     .video-title {
       width: 100%;
-      font-size: 17px;
-      line-height: 1.55;
+      max-width: 1100px;
+      font-size: 20px;
+      line-height: 1.7;
       color: #666;
-      margin: 0 0 14px;
-      padding-left: 5px;
-      text-align: left;
+      margin: 0 auto 24px;
     }
 
     .video-wrapper {
@@ -191,30 +186,23 @@
       display: block;
     }
 
-    .summary {
-      margin-top: 150px;
-      border-radius: 18px;
-      background: #090909;
-      color: white;
-      padding: 70px;
-      position: relative;
-      overflow: hidden;
+    .thanks {
+      margin-top: 180px;
+      text-align: center;
+      padding-bottom: 80px;
     }
 
-    .summary h2 {
-      max-width: 850px;
-      font-size: clamp(42px, 6vw, 76px);
+    .thanks h2 {
+      font-size: clamp(48px, 7vw, 92px);
       line-height: 0.95;
       letter-spacing: -0.05em;
       margin: 0;
     }
 
-    .summary p {
-      max-width: 760px;
-      font-size: 20px;
-      line-height: 1.65;
-      color: rgba(255,255,255,0.7);
-      margin-top: 30px;
+    .thanks p {
+      margin-top: 20px;
+      font-size: 22px;
+      color: #666;
     }
 
     @media (max-width: 900px) {
@@ -242,15 +230,13 @@
 
       .prev { left: 12px; }
       .next { right: 12px; }
-
-      .summary { padding: 40px 28px; }
     }
   </style>
 </head>
 
 <body>
   <main class="page">
-    <p class="eyebrow">Product Motion Assignment</p>
+    <p class="eyebrow">Product Motion Assignment — by Idan Vardi</p>
 
     <h1>Introducing Retake through motion.</h1>
 
@@ -259,69 +245,128 @@
     </p>
 
     <section class="section">
-      <h2>Option 01 — Guided Walkthrough</h2>
+      <h2>Option 01 — Continuous Value-First Demo</h2>
+
       <p class="section-description">
-        A step-by-step educational flow that introduces Retake through a focused modal walkthrough. This approach is more explanatory and works well for first-time discovery.
+        A continuous video-based onboarding moment, presented in a smaller in-context frame.<br><br>
+
+        This direction avoids over-celebrating the feature announcement. Instead, it puts the user benefit first: showing that Retake can change a specific part of a video without regenerating the entire result.<br><br>
+
+        Because the education stays smaller within the workspace, it feels less disruptive and helps preserve orientation. The user remains aware of where they are in the product while still receiving a clear feature introduction.<br><br>
+
+        <strong>Pros</strong><br>
+        • Leads with value, both visually and textually.<br>
+        • Feels more elegant and less promotional.<br>
+        • Keeps the user closer to the workspace context.<br>
+        • A continuous video may help more users absorb the full benefit quickly, without needing to click through multiple steps.<br>
+        • The smaller frame reduces the feeling that the product experience is being hijacked.<br><br>
+
+        <strong>Cons</strong><br>
+        • The feature launch feels less celebrated.<br>
+        • A continuous video may create higher cognitive load if too much happens too quickly.<br>
+        • Users may miss specific interaction details because they are not controlling the pace.<br><br>
+
+        <strong>Why I chose this imagery</strong><br>
+        Since the visual is relatively small in the frame, the image needs to be immediately readable. A realistic scene could become visually noisy at thumbnail size, while an illustrated/anime style is more iconic, recognizable, and easier to decode quickly.<br><br>
+
+        I chose a scene with a clear beginning, middle, and end so the timeline selection is easy to understand. The middle section includes a close-up, making the Retake change feel focused on one clear, visible element.
       </p>
+
       <div id="carouselA"></div>
-
-      <div class="video-section">
-        <p class="video-title">
-          Final motion prototype showing the complete Retake flow.
-        </p>
-
-        <div class="video-wrapper">
-          <iframe
-            src="https://www.youtube.com/embed/8MKxbgnd1bo"
-            title="Retake Motion Demo"
-            frameborder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowfullscreen>
-          </iframe>
-        </div>
-      </div>
     </section>
 
     <section class="section">
-      <h2>Option 02 — Contextual Tooltip Flow</h2>
+      <h2>Option 02 — Feature Announcement + Guided Stepper</h2>
+
       <p class="section-description">
-        A lighter contextual onboarding experience that teaches Retake inside the workspace with minimal interruption to the creative flow.
+        A stronger feature announcement followed by a smaller, contextual step-by-step walkthrough.<br><br>
+
+        This direction starts with a more visible announcement to make sure users notice the new capability. After that, it uses micro-interactions around the Tools menu to orient the user before moving into a stepper that explains the feature value and workflow.<br><br>
+
+        The idea is to balance discoverability with clarity: first show where the feature lives, then explain what it does.<br><br>
+
+        <strong>Pros</strong><br>
+        • Makes the new feature harder to miss.<br>
+        • Creates a stronger launch moment and can support brand/product perception.<br>
+        • Showing the Tools menu helps users understand where to find Retake later.<br>
+        • The stepper reduces cognitive load by breaking the explanation into smaller, controlled moments.<br>
+        • Users can move through the information at their own pace.<br><br>
+
+        <strong>Cons</strong><br>
+        • Starting with a large announcement and then adding UI guidance may feel intrusive.<br>
+        • Motion layered on top of the workspace can feel like it temporarily takes over the product.<br>
+        • A stepper gives users control, but also gives them more opportunities to dismiss before seeing the full value.<br>
+        • The value appears later than in Option 1.<br><br>
+
+        <strong>Why I chose this imagery</strong><br>
+        The visual choice follows the same logic as Option 1. Because the example appears in a relatively small UI area, the imagery needs to be readable fast. The illustrated style keeps the scene clear and reduces visual noise, helping users understand the Retake change without needing to study the frame.
       </p>
+
       <div id="carouselB"></div>
     </section>
 
     <section class="section">
-      <h2>Option 03 — Visual Demo Flow</h2>
+      <h2>Option 03 — Lightweight Announcement + Expanded Modal Tour</h2>
+
       <p class="section-description">
-        A polished product demo approach that shows the feature through an example video, then demonstrates the precise retake workflow and final outcome.
+        A small initial announcement followed by a larger, more immersive modal walkthrough.<br><br>
+
+        This direction first introduces the feature with a simple message, then invites users into a more detailed product tour. The expanded modal gives more space to explain the workflow clearly, show richer visuals, and demonstrate the feature with a more impressive video example.<br><br>
+
+        This is the most explanatory and polished direction. It leans into product education and brand presentation more than the other options.<br><br>
+
+        <strong>Pros</strong><br>
+        • The initial text-first message can communicate the core value very quickly.<br>
+        • Asking users to continue into the tour creates a stronger intent signal.<br>
+        • Users who choose to continue are more likely to engage deeply and try the feature afterward.<br>
+        • The larger modal gives enough room for clearer visual hierarchy and more detailed explanation.<br>
+        • It creates an opportunity to showcase the quality of the video generation itself.<br><br>
+
+        <strong>Cons</strong><br>
+        • Asking users to opt into a tour may create a major drop-off.<br>
+        • The larger modal is more interruptive and takes users further out of their workflow.<br>
+        • A stepper gives users control, but also gives them more time to decide to close it.<br>
+        • This direction may feel heavier than necessary for users who prefer to learn by doing.<br><br>
+
+        <strong>Why I chose this imagery</strong><br>
+        Because this option uses a larger visual surface, it can support more realistic and detailed imagery. This gives the product a chance to impress users with generation quality, cinematic detail, and emotional appeal.<br><br>
+
+        The larger frame also makes the Retake concept easier to explain because users can clearly see the selected section, the requested change, and the final result without the visual becoming too dense.
       </p>
+
       <div id="carouselC"></div>
     </section>
 
-    <section class="summary">
-      <p class="eyebrow">Final Thoughts</p>
-      <h2>The motion should make the value instantly clear.</h2>
-      <p>
-        Across all three directions, the main idea is the same: Retake gives users precision and control. Instead of starting over, they can isolate a moment, describe the change, and keep the rest of the video intact.
+    <section class="video-section">
+      <p class="video-title">
+        I chose to move forward with Option 1 because it communicates the actual user value most effectively and immediately. Users are intelligent and naturally skeptical of feature announcements — large promotional moments can feel marketing-driven and focused on what the product wants to say, rather than what the user gains from it.<br><br>
+
+        Leading with the value itself, both visually and contextually, creates a more natural and user-centered introduction to the feature.<br><br>
+
+        A continuous video also has a better chance of delivering more information in a shorter amount of time. Since the experience flows passively, users are not required to make immediate decisions such as whether to continue or dismiss the walkthrough. This reduces friction, lowers interruption, and minimizes opportunities to prematurely close the experience before understanding the benefit.
       </p>
+
+      <div class="video-wrapper">
+        <iframe
+          src="https://www.youtube.com/embed/8MKxbgnd1bo"
+          title="Retake Motion Demo"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen>
+        </iframe>
+      </div>
+    </section>
+
+    <section class="thanks">
+      <h2>Thank you</h2>
+      <p>Idan Vardi</p>
     </section>
   </main>
 
   <script>
     const data = {
       carouselA: {
-        images: [
-          "First.png",
-          "A1.png",
-          "A2.png",
-          "A3.png",
-          "A4.png",
-          "A5.png",
-          "A6.png",
-          "A7.png",
-          "A8.png",
-          "A9.png"
-        ],
+        images: ["First.png","A1.png","A2.png","A3.png","A4.png","A5.png","A6.png","A7.png","A8.png","A9.png"],
         captions: [
           "Initial state before animation starts",
           "Presenting value on 1st frame",
@@ -337,19 +382,7 @@
       },
 
       carouselB: {
-        images: [
-          "First.png",
-          "B1.png",
-          "B2.png",
-          "B3.png",
-          "B4.png",
-          "B5.png",
-          "B6.png",
-          "B7.png",
-          "B8.png",
-          "B9.png",
-          "B10.png"
-        ],
+        images: ["First.png","B1.png","B2.png","B3.png","B4.png","B5.png","B6.png","B7.png","B8.png","B9.png","B10.png"],
         captions: [
           "Initial state before animation starts",
           "Big announcement of the feature",
@@ -366,17 +399,7 @@
       },
 
       carouselC: {
-        images: [
-          "First.png",
-          "C1.png",
-          "C2.png",
-          "C3.png",
-          "C4.png",
-          "C5.png",
-          "C6.png",
-          "C7.png",
-          "C8.png"
-        ],
+        images: ["First.png","C1.png","C2.png","C3.png","C4.png","C5.png","C6.png","C7.png","C8.png"],
         captions: [
           "Initial state before animation starts",
           "Small announcement of the feature",
